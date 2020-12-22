@@ -1,18 +1,18 @@
 package edu.xjtu;
 
-/**
- * Hello world!
- *
- */
-public class App
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    private static final Logger logger;
+
+    static {
+        logger = LogManager.getLogger(App.class);
     }
 
-    public boolean testMethod(int a)
+    public static void main( String[] args )
     {
-        return a>0;
+
     }
 }
