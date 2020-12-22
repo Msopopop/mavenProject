@@ -2,6 +2,10 @@ language: java
 
 jdk:
   - openjdk11
+install:
+  - true
 
+script:
+  - mvn clean package -DskipTests=true
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t 14c30d09-95d4-4184-a868-7fad00dad5e1
