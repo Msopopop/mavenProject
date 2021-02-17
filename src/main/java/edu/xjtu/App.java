@@ -1,22 +1,24 @@
 package edu.xjtu;
 
+import edu.xjtu.Utils.PRIVILEGE;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.InputMismatchException;
+
 
 public class App
 {
     private static final Logger logger = LoggerFactory.getLogger(App.class);
 
-    public static void main( String[] args )
-    {
-        String s1 = "Java";
-        String s2 = "Java";
-        String s3 = "Javc";
-        String s4 = "Aava";
-        logger.warn("1");
-        logger.info(s1 == s3?"true":"false");
-        logger.info(String.valueOf(s1.compareTo(s3)));
-        logger.info(String.valueOf(s1.compareTo(s4)));
+    public static void main( String[] args )  {
 
+        try(var in = new java.util.Scanner(System.in))
+        {
+            System.out.print(in.nextInt());
+        }catch (InputMismatchException e)
+        {
+            var walker = StackWalker.getInstance();
+            walker.forEach(System.out::println);
+        }
     }
 }
